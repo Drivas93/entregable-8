@@ -1,0 +1,56 @@
+.contenedor-cartas-proyectos {
+    display: grid;
+    margin: 150px 20px 20px 20px;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: 200px;
+    gap: 20px;
+
+    > div {
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.68);
+        border-radius: 10px;
+    }
+
+    div div img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .textos-cartas-proyectos {
+        margin: 7px;
+        padding: 10px;
+    }
+}
+@media (max-width:1020px) {
+    .contenedor-cartas-proyectos {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+    }
+}
+@media (max-width:530px) {
+    .contenedor-cartas-proyectos {
+    grid-auto-rows: 120px;
+    grid-auto-columns: 100px;
+    }
+    .textos-cartas-proyectos p {
+        display: none;
+    }
+    .textos-cartas-proyectos h4 {
+        font-size: 14px;
+    }
+}
+
+// agrego MAP para cambiar colores de títulos
+$colores-textos: (
+    arquitectura: #1266af,
+    interiores: #1a864e,
+    cocinas: #595959,
+    muebles: #87410b,
+);
+
+@each $texto, $color in $colores-textos{
+    .texto-#{$texto} {
+         color:$color;
+        }
+}
